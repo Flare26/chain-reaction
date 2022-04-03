@@ -759,6 +759,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rig-Farmboy
       objectReference: {fileID: 0}
+    - target: {fileID: 4533580197969053433, guid: 0ca835c44621d8f45b8acdb9212d96f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533888707494318521, guid: 0ca835c44621d8f45b8acdb9212d96f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4539018016760548377, guid: 0ca835c44621d8f45b8acdb9212d96f2,
         type: 3}
       propertyPath: m_RootOrder
