@@ -11,9 +11,12 @@ public class slingshot : MonoBehaviour
     public Vector3 yeetDirection;
 
     public Transform holdPosition;
+
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb.isKinematic = true;
         yeetDirection = new Vector3(1, 0.25f, 0);
     }
 
@@ -29,6 +32,8 @@ public class slingshot : MonoBehaviour
 
     public void yeet()
     {
-        objectToBeYeeted.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * 10, ForceMode.Acceleration);
+        objectToBeYeeted.transform.parent = null;
+        rb.isKinematic = false;
+        rb.AddForce(yeetDirection * puller.launchPower * 10, ForceMode.Acceleration);
     }
 }
