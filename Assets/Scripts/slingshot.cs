@@ -15,6 +15,8 @@ public class slingshot : MonoBehaviour
     public GameObject crate;
     public victim victim;
 
+    public float yeetMultiplier;
+
     void Awake()
     {
         crate.GetComponent<Rigidbody>().isKinematic = true;
@@ -28,10 +30,10 @@ public class slingshot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puller.pullingString)
-        {
+        //if (puller.pullingString)
+        //{
             //objectToBeYeeted.transform.position = holdPosition.position;
-        }
+        //}
     
     }
 
@@ -40,6 +42,6 @@ public class slingshot : MonoBehaviour
         crate.transform.parent = null;
         crate.GetComponent<Rigidbody>().isKinematic = false;
         victim.inFlight = true;
-        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * 500 * Time.deltaTime, ForceMode.Acceleration);
+        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * yeetMultiplier * Time.deltaTime, ForceMode.Acceleration);
     }
 }

@@ -10,10 +10,13 @@ public class gameManager : MonoBehaviour
 
     public AudioClip[] cowSounds;
 
-    public timer timer;
-
     public int score;
 
+    public gameMenu gameMenu;
+
+    public bool gettingReady = false, buildingPower = false;
+
+    public slingshot slingshot;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,8 +32,7 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        timer.startTimer(5);
+        gameMenu.gameStartTimer.startTimer(5, 0);
     }
 
     // Update is called once per frame
@@ -46,4 +48,15 @@ public class gameManager : MonoBehaviour
         return cowSounds[x];
 
     }
+
+    public void startBuildingPower()
+    {
+        print("building power");
+        slingshot.puller.pullingString = true;
+        gameMenu.gameStartMenu.gameObject.SetActive(false);
+        gameMenu.buildPowerMenu.gameObject.SetActive(true);
+        gameMenu.buildPowerTimer.startTimer(5, 1);
+    }
+
+ 
 }

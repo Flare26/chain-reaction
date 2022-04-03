@@ -11,10 +11,10 @@ public class slingshotPuller : MonoBehaviour
     public slingshot slingshot;
 
     public Transform crate;
-
+    public gameMenu gameMenu;
 
     bool firstInput = false, nextInput = false;
-    public bool pullingString = true;
+    public bool pullingString = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,10 +67,10 @@ public class slingshotPuller : MonoBehaviour
             distancePulled -= Time.deltaTime * launchPower;
         }
 
-        if (Input.GetButtonDown("Jump") && slingshot.victim.inFlight == false && slingshot.victim.inFreefall == false)
-        {
-            releaseSling();
-        }
+        //if (Input.GetButtonDown("Jump") && slingshot.victim.inFlight == false && slingshot.victim.inFreefall == false)
+        //{
+         //   releaseSling();
+        //}
 
     }
 
@@ -79,6 +79,7 @@ public class slingshotPuller : MonoBehaviour
         distancePulled += incrementSize;
         launchPower += 10;
         crate.transform.position = Vector3.Lerp(drawFrom.position, drawTo.position, distancePulled / 100);
+        gameMenu.alternateArrow(nextInput);
     }
 
     public void releaseSling()
