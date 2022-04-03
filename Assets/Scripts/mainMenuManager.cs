@@ -17,8 +17,16 @@ public class mainMenuManager : MonoBehaviour
         
     }
 
-    public void startGame()
+    public void startGame(int level)
     {
-        SceneManager.LoadScene("gameScene");
+        if (level == 0)
+        {
+            SceneManager.LoadScene("gameScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("Mountain!");
+        }
+        
     }
 }
