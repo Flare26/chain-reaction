@@ -29,10 +29,10 @@ public class cow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer != enviornment)
+        if (collision.gameObject.layer != LayerMask.NameToLayer("Enviornment"))
         {
             Vector3 impulseLocation = collision.transform.position;
-            rb.AddExplosionForce(2500, impulseLocation, 2);
+            rb.AddExplosionForce(1250, impulseLocation, 2);
             audioSource.clip = gm.playCowSound();
             audioSource.Play();
             print("MOO!");
