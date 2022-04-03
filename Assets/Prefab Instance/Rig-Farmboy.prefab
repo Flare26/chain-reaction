@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4593221227158364339}
   - component: {fileID: 5456750436158218764}
   - component: {fileID: 1641408922204817576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rig-Farmboy
   m_TagString: Player
   m_Icon: {fileID: 0}
