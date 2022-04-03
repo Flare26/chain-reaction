@@ -63,8 +63,8 @@ public class slingshotPuller : MonoBehaviour
         else
         {
             //return sling to home
-            //crate.transform.position = Vector3.Lerp(drawFrom.position, drawTo.position, distancePulled / 100);
-            //distancePulled -= Time.deltaTime * launchPower;
+            crate.transform.position = Vector3.Lerp(drawFrom.position, drawTo.position, distancePulled / 100);
+            distancePulled -= Time.deltaTime * launchPower;
         }
 
         if (Input.GetButtonDown("Jump"))

@@ -5,7 +5,7 @@ using UnityEngine;
 public class slingshotSling : MonoBehaviour
 {
     public LineRenderer slingRope;
-    public Transform leftPost, rightPost, crateCornerL, crateCornerR;
+    public Transform leftPost, rightPost, crateHolder;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,6 @@ public class slingshotSling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slingRope.SetPositions(new Vector3[4] { leftPost.position, crateCornerL.position, crateCornerR.position, rightPost.position });
+        slingRope.SetPositions(new Vector3[3] { leftPost.position, crateHolder.position, rightPost.position });
     }
 }
