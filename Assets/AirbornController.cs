@@ -20,7 +20,7 @@ public class AirbornController : MonoBehaviour
 
     private void Update()
     {
-        if (hips.transform.position.y > floorBounding && hips.transform.position.y !< 0)
+        if (true)
         {
 
             if (Input.GetKey(KeyCode.A))
