@@ -36,6 +36,7 @@ public class victim : MonoBehaviour
     {
         foreach (var rb in rig)
         {
+            rb.gameObject.SetActive(true);
             rb.isKinematic = false;
         }
     }
@@ -51,7 +52,10 @@ public class victim : MonoBehaviour
 
     public void dismount()
     {
+        Vector3 impulseLocation = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y, transform.parent.transform.position.z);
+        transform.parent = null;
         activateRagdoll();
+        rig[0].AddExplosionForce(25000, impulseLocation, 10);
         inFlight = false;
         inFreefall = true;
     }

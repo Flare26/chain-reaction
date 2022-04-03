@@ -40,6 +40,6 @@ public class slingshot : MonoBehaviour
         crate.transform.parent = null;
         crate.GetComponent<Rigidbody>().isKinematic = false;
         victim.inFlight = true;
-        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * 1000 * Time.deltaTime, ForceMode.Acceleration);
+        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * 500 * Time.deltaTime, ForceMode.Acceleration);
     }
 }

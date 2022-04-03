@@ -67,7 +67,7 @@ public class slingshotPuller : MonoBehaviour
             distancePulled -= Time.deltaTime * launchPower;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && slingshot.victim.inFlight == false && slingshot.victim.inFreefall == false)
         {
             releaseSling();
         }
