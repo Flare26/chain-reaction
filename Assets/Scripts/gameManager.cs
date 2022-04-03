@@ -8,6 +8,9 @@ public class gameManager : MonoBehaviour
 
     public bool countingDown;
 
+    public AudioClip[] cowSounds;
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -30,5 +33,13 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public AudioClip playCowSound()
+    {
+
+        int x = Random.Range(0, 14);
+        return cowSounds[x];
+
     }
 }
