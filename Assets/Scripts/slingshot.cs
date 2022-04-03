@@ -6,17 +6,22 @@ public class slingshot : MonoBehaviour
 {
     public slingshotPuller puller;
     public slingshotSling sling;
-    public GameObject objectToBeYeeted;
+    
     public bool holdingObject;
     public Vector3 yeetDirection;
 
     public Transform holdPosition;
 
-    public Rigidbody rb;
+    public GameObject crate;
+    public victim victim;
+
+    void Awake()
+    {
+        crate.GetComponent<Rigidbody>().isKinematic = true;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        rb.isKinematic = true;
         yeetDirection = new Vector3(1, 0.25f, 0);
     }
 
@@ -25,15 +30,16 @@ public class slingshot : MonoBehaviour
     {
         if (puller.pullingString)
         {
-            objectToBeYeeted.transform.position = holdPosition.position;
+            //objectToBeYeeted.transform.position = holdPosition.position;
         }
     
     }
 
     public void yeet()
     {
-        objectToBeYeeted.transform.parent = null;
-        rb.isKinematic = false;
-        rb.AddForce(yeetDirection * puller.launchPower * 10, ForceMode.Acceleration);
+        crate.transform.parent = null;
+        crate.GetComponent<Rigidbody>().isKinematic = false;
+        victim.inFlight = true;
+        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * 1000 * Time.deltaTime, ForceMode.Acceleration);
     }
 }
