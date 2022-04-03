@@ -53,18 +53,18 @@ public class victim : MonoBehaviour
 
     public void dismount()
     {
-        
-        foreach(Rigidbody bone in rig)
-        {
-            // transfer momentum from parent before cutting ties
-            //bone.velocity = 
-
-        }
+        Debug.Log("PARENT TO VICTIM IS " + transform.parent.name);
+        Vector3 pv = prb.velocity;
 
         Vector3 impulseLocation = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y, transform.parent.transform.position.z);
         transform.parent = null;
         activateRagdoll();
         rig[0].AddExplosionForce(25000, impulseLocation, 10);
+        foreach (Rigidbody bone in rig)
+        {
+            // transfer momentum from parent before cutting ties
+            bone.velocity = pv;
+        }
         inFlight = false;
         inFreefall = true;
     }

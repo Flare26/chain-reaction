@@ -9,7 +9,7 @@ public class AirbornController : MonoBehaviour
     [SerializeField] float forceMult;
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -17,13 +17,13 @@ public class AirbornController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Debug.Log("Holding A");
-            hips.AddForce(Vector3.left * forceMult, ForceMode.Acceleration);
+            hips.AddForce(Vector3.forward * forceMult, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             Debug.Log("Holding D");
-            hips.AddForce(Vector3.right * forceMult, ForceMode.Acceleration);
+            hips.AddForce(Vector3.back * forceMult, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.W))
