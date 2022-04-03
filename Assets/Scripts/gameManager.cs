@@ -17,6 +17,7 @@ public class gameManager : MonoBehaviour
     public bool gettingReady = false, buildingPower = false;
 
     public slingshot slingshot;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

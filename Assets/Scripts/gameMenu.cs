@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gameMenu : MonoBehaviour
 {
@@ -47,5 +48,10 @@ public class gameMenu : MonoBehaviour
             leftArrow.alpha = 1;
             rightArrow.alpha = 0;
         }
+    }
+
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene("mainMenu");
     }
 }
