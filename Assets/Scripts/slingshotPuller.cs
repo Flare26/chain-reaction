@@ -86,5 +86,7 @@ public class slingshotPuller : MonoBehaviour
     {
         pullingString = false;
         slingshot.yeet();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

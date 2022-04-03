@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         gameMenu.gameStartTimer.startTimer(5, 0);
+        
     }
 
     // Update is called once per frame
