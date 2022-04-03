@@ -29,13 +29,13 @@ public class AirbornController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             Debug.Log("Holding W");
-            hips.AddForce(Vector3.up * forceMult, ForceMode.Acceleration);
+            hips.AddForce(Vector3.right * forceMult, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             Debug.Log("Holding S");
-            hips.AddForce(Vector3.down * forceMult, ForceMode.Acceleration);
+            hips.AddForce(Vector3.left * forceMult, ForceMode.Acceleration);
         }
     }
 }
