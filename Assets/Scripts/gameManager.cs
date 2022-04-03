@@ -10,6 +10,9 @@ public class gameManager : MonoBehaviour
 
     public AudioClip[] cowSounds;
 
+    public timer timer;
+
+    public int score;
 
     private void Awake()
     {
@@ -26,7 +29,8 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        timer.startTimer(5);
     }
 
     // Update is called once per frame
