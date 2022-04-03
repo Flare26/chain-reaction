@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hips: {fileID: 4531438664934649850}
-  forceMult: 5
+  forceMult: 10
 --- !u!1 &4533052987572215395
 GameObject:
   m_ObjectHideFlags: 0
