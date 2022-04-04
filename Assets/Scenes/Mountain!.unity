@@ -2116,11 +2116,6 @@ PrefabInstance:
       objectReference: {fileID: 1655485375}
     - target: {fileID: 3723255886082169952, guid: 95c489338f8cfdf49abc8ca0d75d0c12,
         type: 3}
-      propertyPath: incrementSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3723255886082169952, guid: 95c489338f8cfdf49abc8ca0d75d0c12,
-        type: 3}
       propertyPath: pullingString
       value: 0
       objectReference: {fileID: 0}
@@ -2187,7 +2182,7 @@ PrefabInstance:
     - target: {fileID: 3723255886082169980, guid: 95c489338f8cfdf49abc8ca0d75d0c12,
         type: 3}
       propertyPath: yeetMultiplier
-      value: 1500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8651955965720832932, guid: 95c489338f8cfdf49abc8ca0d75d0c12,
         type: 3}
