@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public static gameManager Instance;
+    //public static gameManager Instance;
 
     public bool countingDown;
 
@@ -20,14 +20,14 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
+        //if (Instance != null && Instance != this)
+        //{
+        //    Destroy(this);
+        //    return;
+        //}
 
-        Instance = this;
-        DontDestroyOnLoad(this);
+        //Instance = this;
+        //DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
