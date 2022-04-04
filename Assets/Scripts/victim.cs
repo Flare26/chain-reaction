@@ -6,12 +6,12 @@ public class victim : MonoBehaviour
 {
     public Rigidbody[] rig;
     public bool inFlight = false, inFreefall = false;
-    Rigidbody prb;
+    public Rigidbody prb;
 
     private void Awake()
     {
         rig = GetComponentsInChildren<Rigidbody>();
-        prb = transform.parent.GetComponentInParent<Rigidbody>();
+        //prb = transform.parent.GetComponentInParent<Rigidbody>();
         disableRagdoll();
     }
     // Start is called before the first frame update
@@ -35,16 +35,19 @@ public class victim : MonoBehaviour
 
     public void activateRagdoll()
     {
-        foreach (var rb in rig)
+        print("activated " + rig.Length + "bones");
+        for (int i = 0; i < rig.Length; i++)
         {
-            rb.gameObject.SetActive(true);
-            rb.isKinematic = false;
+           rig[i].gameObject.SetActive(true);
+            rig[i].isKinematic = false;
         }
+
     }
 
     public void disableRagdoll()
     {
-        foreach (var rb in rig)
+        print("disabled " + rig.Length + "bones");
+        foreach (Rigidbody rb in rig)
         {
             rb.isKinematic = true;
             rb.gameObject.SetActive(false);
@@ -53,19 +56,23 @@ public class victim : MonoBehaviour
 
     public void dismount()
     {
-        Debug.Log("PARENT TO VICTIM IS " + transform.parent.name);
-        Vector3 pv = prb.velocity;
 
-        Vector3 impulseLocation = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y, transform.parent.transform.position.z);
-        transform.parent = null;
-        activateRagdoll();
-        rig[0].AddExplosionForce(25000, impulseLocation, 10);
-        foreach (Rigidbody bone in rig)
-        {
-            // transfer momentum from parent before cutting ties
-            bone.velocity = pv;
-        }
-        inFlight = false;
-        inFreefall = true;
+            Debug.Log("PARENT TO VICTIM IS " + transform.parent.name);
+            Vector3 pv = prb.velocity;
+
+            Vector3 impulseLocation = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y, transform.parent.transform.position.z);
+            transform.parent = null;
+            activateRagdoll();
+            print("launching " + rig.Length + "bones");
+            foreach (Rigidbody bone in rig)
+            {
+                // transfer momentum from parent before cutting ties
+                bone.velocity = pv;
+            }
+            rig[0].AddExplosionForce(250, impulseLocation, 10, 10, ForceMode.Impulse);
+
+            inFlight = false;
+            inFreefall = true;
+
     }
 }

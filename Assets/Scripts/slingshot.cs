@@ -12,7 +12,7 @@ public class slingshot : MonoBehaviour
 
     public Transform holdPosition;
 
-    public GameObject crate;
+    public GameObject crate, crateHolder;
     public victim victim;
 
     public float yeetMultiplier;
@@ -32,8 +32,12 @@ public class slingshot : MonoBehaviour
     {
         //if (puller.pullingString)
         //{
-            //objectToBeYeeted.transform.position = holdPosition.position;
+        //objectToBeYeeted.transform.position = holdPosition.position;
         //}
+        if (Input.GetButtonDown("Fire3"))
+        {
+            yeet();
+        }
     
     }
 
@@ -42,6 +46,6 @@ public class slingshot : MonoBehaviour
         crate.transform.parent = null;
         crate.GetComponent<Rigidbody>().isKinematic = false;
         victim.inFlight = true;
-        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * yeetMultiplier * Time.deltaTime, ForceMode.Acceleration);
+        crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * yeetMultiplier, ForceMode.Acceleration);
     }
 }
