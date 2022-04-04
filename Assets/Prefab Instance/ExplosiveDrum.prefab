@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1461473687560881644
 MonoBehaviour:
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe7fe9f68406af44b65f29cfe5c2a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 250
-  explosionRadius: 1
-  upwardForce: 2
+  explosionForce: 350
+  explosionRadius: 3
+  upwardForce: 1
 --- !u!199 &2793851503022706408
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -13,7 +13,7 @@ public class AirbornController : MonoBehaviour
     victim v;
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         v = GetComponent<victim>();
     }
 

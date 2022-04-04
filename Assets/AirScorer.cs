@@ -12,9 +12,10 @@ public class AirScorer : MonoBehaviour
         gm = GameObject.Find("GM").GetComponent<gameManager>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision c)
     {
-        if (other.tag == "Player")
+        Debug.Log("CollisionEnter Player");
+        if (c.collider.tag == "Player")
             gm.score += 1775;
     }
 
