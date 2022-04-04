@@ -353,6 +353,7 @@ MonoBehaviour:
   yeetDirection: {x: 0, y: 0, z: 0}
   holdPosition: {fileID: 3723255885856020455}
   crate: {fileID: 3723255885620497445}
+  crateHolder: {fileID: 3723255884177769482}
   victim: {fileID: 3723255884572808323}
   yeetMultiplier: 0
 --- !u!1 &3723255886159064635
@@ -817,6 +818,7 @@ MonoBehaviour:
   rig: []
   inFlight: 0
   inFreefall: 0
+  prb: {fileID: 3723255885879744751}
 --- !u!1001 &3723255884781034932
 PrefabInstance:
   m_ObjectHideFlags: 0
