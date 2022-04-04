@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 4593221227158364339}
   - component: {fileID: 5456750436158218764}
   - component: {fileID: 1641408922204817576}
+  - component: {fileID: 982981314282993663}
   m_Layer: 6
   m_Name: Rig-Farmboy
   m_TagString: Player
@@ -360,6 +361,25 @@ MonoBehaviour:
   rig: []
   inFlight: 0
   inFreefall: 0
+--- !u!114 &982981314282993663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532999487861898531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29a59bb80f1f67469b6afad43029838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skins:
+  - {fileID: 4533888707494318521}
+  - {fileID: 4533580197969053433}
+  - {fileID: 4533082155053785157}
+  - {fileID: 4533893121268958475}
+  - {fileID: 4533941439924961299}
+  - {fileID: 4533807846146612771}
 --- !u!1 &4533052987572215395
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +454,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -467,7 +487,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300006, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
   m_Bones:
@@ -1082,7 +1102,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1115,7 +1135,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300008, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
   m_Bones:
@@ -1358,7 +1378,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1391,7 +1411,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
   m_Bones:
@@ -1953,7 +1973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4531521704589118581}
   - component: {fileID: 4542800849147262603}
-  - component: {fileID: 3325178330149353056}
   m_Layer: 0
   m_Name: SM_Chr_FarmBoy_01
   m_TagString: Player
@@ -2078,21 +2097,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000000059604645, y: 0.84915364, z: -0.04850263}
     m_Extent: {x: 1.0245616, y: 0.94945085, z: 0.26688987}
   m_DirtyAABB: 0
---- !u!114 &3325178330149353056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4533888707494318521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d186bd129f2b7428435eae889c5ede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hips: {fileID: 4531438664934649850}
-  forceMult: 1
-  floorBounding: 0
 --- !u!1 &4533893121268958475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2139,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2168,7 +2172,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300004, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
   m_Bones:
@@ -2411,7 +2415,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2444,7 +2448,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300002, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
   m_Bones:
