@@ -7,6 +7,7 @@ public class victim : MonoBehaviour
     public Rigidbody[] rig;
     public bool inFlight = false, inFreefall = false;
     public Rigidbody prb;
+    public gameManager gm;
 
     private void Awake()
     {
@@ -73,6 +74,6 @@ public class victim : MonoBehaviour
 
             inFlight = false;
             inFreefall = true;
-
+        gm.gameMenu.dismountText.gameObject.SetActive(false);
     }
 }

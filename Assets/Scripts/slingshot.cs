@@ -47,5 +47,6 @@ public class slingshot : MonoBehaviour
         crate.GetComponent<Rigidbody>().isKinematic = false;
         victim.inFlight = true;
         crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * yeetMultiplier, ForceMode.Acceleration);
+        puller.gm.gameMenu.dismountText.gameObject.SetActive(true);
     }
 }

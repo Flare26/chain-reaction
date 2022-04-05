@@ -11,12 +11,13 @@ public class gameMenu : MonoBehaviour
 
     public TMP_Text startText, buildText;
 
-    public TMP_Text scoreText;
+    public TMP_Text scoreText, dismountText;
 
     public GameObject gameStartMenu, buildPowerMenu;
     public timer gameStartTimer, buildPowerTimer;
 
     public gameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,4 +56,5 @@ public class gameMenu : MonoBehaviour
         print("returning");
         SceneManager.LoadScene("mainMenu");
     }
+
 }
