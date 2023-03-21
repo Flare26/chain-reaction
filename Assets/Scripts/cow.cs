@@ -35,7 +35,7 @@ public class cow : MonoBehaviour
             rb.AddExplosionForce(1250, impulseLocation, 2);
             audioSource.clip = gm.playCowSound();
             audioSource.Play();
-            print("MOO!");
+            //print("MOO!");
             gm.score+=100;
         }
 

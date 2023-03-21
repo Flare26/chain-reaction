@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class victim : MonoBehaviour
 {
@@ -8,12 +9,29 @@ public class victim : MonoBehaviour
     public bool inFlight = false, inFreefall = false;
     public Rigidbody prb;
     public gameManager gm;
+    private float timeMovingSlow = 0;
+    private Vector3 lastPos;
+    private Vector3 transformDeltas;
+    private float transformSpd;
+    private Transform startingParent;
+    private Vector3[] startingRigPosVals;
+    private Quaternion[] startingRigRotVals;
 
     private void Awake()
     {
+        startingParent = transform.parent;
         rig = GetComponentsInChildren<Rigidbody>();
+        startingRigPosVals = new Vector3[rig.Length];
+        startingRigRotVals = new Quaternion[rig.Length];
+        for (int i = 0; i < rig.Length; i++)
+        {
+            startingRigPosVals[i] = rig[i].transform.position;
+            startingRigRotVals[i] = rig[i].transform.rotation;
+        }
+        
         //prb = transform.parent.GetComponentInParent<Rigidbody>();
         disableRagdoll();
+        lastPos = transform.position;
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +42,8 @@ public class victim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //print("rig[0] speed = " + rig[0].velocity.magnitude);
+        float playerVel = rig[0].velocity.magnitude;
         if (inFlight)
         {
             if (Input.GetButtonDown("Jump"))
@@ -32,11 +52,43 @@ public class victim : MonoBehaviour
             }  
 
         }
+
+        // check for if the player has stopped moving quickly
+
+        if((inFlight == true || inFreefall == true ) && playerVel < 0.1f)
+        {
+            timeMovingSlow += Time.deltaTime;
+        }
+
+        // check if player is not moving fast enough for too long
+
+        if (timeMovingSlow > 4f && (inFlight == true || inFreefall == true))
+        {
+            // Next round, not moving fast enough for too long.
+            print("Resetting round...");
+            disableRagdoll();
+            gm.NextRound();
+            transform.parent = startingParent;
+            for (int i = 0; i < 0; i++)
+            {
+                rig[i].position = startingRigPosVals[i];
+                rig[i].rotation = startingRigRotVals[i];
+            }
+            // reset time on floor until the player launches again
+            timeMovingSlow = 0;
+            inFlight = false;
+            inFreefall = false;
+            Scene s = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(s.name);
+        }
+
     }
+
+    
 
     public void activateRagdoll()
     {
-        print("activated " + rig.Length + "bones");
+        //print("activated " + rig.Length + "bones");
         for (int i = 0; i < rig.Length; i++)
         {
            rig[i].gameObject.SetActive(true);
@@ -47,7 +99,7 @@ public class victim : MonoBehaviour
 
     public void disableRagdoll()
     {
-        print("disabled " + rig.Length + "bones");
+        //print("disabled " + rig.Length + "bones");
         foreach (Rigidbody rb in rig)
         {
             rb.isKinematic = true;

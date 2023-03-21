@@ -76,7 +76,11 @@ public class slingshotPuller : MonoBehaviour
         //}
 
     }
-
+    public void ResetSling()
+    {
+        crate.transform.position = drawFrom.position;
+        distancePulled = 0;
+    }
     public void pullSling()
     {
         distancePulled += incrementSize;

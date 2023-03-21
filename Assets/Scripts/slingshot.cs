@@ -22,6 +22,12 @@ public class slingshot : MonoBehaviour
         crate.GetComponent<Rigidbody>().isKinematic = true;
     }
     // Start is called before the first frame update
+
+    public void ResetPuller()
+    {
+        puller.ResetSling();
+    }
+
     void Start()
     {
         yeetDirection = new Vector3(1, 0.25f, 0);
@@ -45,7 +51,7 @@ public class slingshot : MonoBehaviour
     {
         crate.transform.parent = null;
         crate.GetComponent<Rigidbody>().isKinematic = false;
-        victim.inFlight = true;
+        victim.inFlight = true; // manually set in flight even if not dismounted yet
         crate.GetComponent<Rigidbody>().AddForce(yeetDirection * puller.launchPower * yeetMultiplier, ForceMode.Acceleration);
         puller.gm.gameMenu.dismountText.gameObject.SetActive(true);
     }

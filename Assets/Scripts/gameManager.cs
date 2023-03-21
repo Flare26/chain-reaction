@@ -18,6 +18,9 @@ public class gameManager : MonoBehaviour
 
     public slingshot slingshot;
 
+    public int round = 0;
+    public int maxRounds = 3;
+
     private void Awake()
     {
         //if (Instance != null && Instance != this)
@@ -43,6 +46,25 @@ public class gameManager : MonoBehaviour
         
     }
 
+    public void NextRound()
+    {
+        if (round < maxRounds)
+        {
+            round++;
+            slingshot.ResetPuller();
+
+        }
+        else
+        {
+            //else we cant fufill the request to start a next round so end the game.
+            EndGame();
+        }
+    }
+
+    public void EndGame()
+    {
+
+    }
     public AudioClip playCowSound()
     {
 

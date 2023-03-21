@@ -12434,6 +12434,8 @@ MonoBehaviour:
   gettingReady: 1
   buildingPower: 0
   slingshot: {fileID: 1740333955}
+  round: 0
+  maxRounds: 3
 --- !u!4 &280100529
 Transform:
   m_ObjectHideFlags: 0
@@ -99348,17 +99350,17 @@ PrefabInstance:
     - target: {fileID: 4690717969680994542, guid: 32c5d8016d974784b91efc56d2c121d6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15204033
+      value: 0.15204035
       objectReference: {fileID: 0}
     - target: {fileID: 4690717969680994542, guid: 32c5d8016d974784b91efc56d2c121d6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.014882423
+      value: -0.014882457
       objectReference: {fileID: 0}
     - target: {fileID: 4690717969680994542, guid: 32c5d8016d974784b91efc56d2c121d6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0022896107
+      value: 0.002289616
       objectReference: {fileID: 0}
     - target: {fileID: 4690717970704548668, guid: 32c5d8016d974784b91efc56d2c121d6,
         type: 3}
